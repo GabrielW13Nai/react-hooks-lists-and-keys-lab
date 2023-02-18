@@ -9,20 +9,13 @@ return user.projects.map(
         <h3>{project.name}</h3>
       <p>{project.about}</p>
       <div className="technologies">
-      <span>
-      {project.technologies.map((tech) =>{
-       return <>
-        <div>
-            {tech} <br/>
-        </div>
+      {project.technologies.map(tech =>
+          {return <>
+        <span key={tech.indexOf}>{tech}</span>
         </>})}
-      </span>
-      </div>
-    </div>}
-  )
-
-    
-
-}
+    </div>
+    </div>
+  })
+  }
 
 export default ProjectItem;
