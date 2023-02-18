@@ -1,15 +1,28 @@
 import React from "react";
+import user from "../data/user";
 
-function ProjectItem({ name, about, technologies }) {
-  return (
-    <div className="project-item">
-      <h3>{name}</h3>
-      <p>{about}</p>
+
+function ProjectItem() {
+return user.projects.map(
+      project => 
+      {return <div className="project-item">
+        <h3>{project.name}</h3>
+      <p>{project.about}</p>
       <div className="technologies">
-        {/* render a <span> for each technology in the technologies array */}
+      <span>
+      {project.technologies.map((tech) =>{
+       return <>
+        <div>
+            {tech} <br/>
+        </div>
+        </>})}
+      </span>
       </div>
-    </div>
-  );
+    </div>}
+  )
+
+    
+
 }
 
 export default ProjectItem;
